@@ -1,0 +1,89 @@
+.corpo {
+    font-size: 15px;
+    padding: 20px;
+}
+
+.nt {
+    display:none
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    font-size: 15px;
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #979797;
+    color: #979797;
+}
+
+.mercadoria {
+    font-size: 15px;
+}
+
+#mercadoria {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    height: 30px;
+    width: 99%;
+    border: 1px solid #979797;
+    border-radius: 5px;
+}
+
+.valor {
+    font-size: 15px;
+    width: 100%;
+}
+
+#valor {
+    width: 95%;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border: 1px solid #979797;
+    color: #979797;
+    padding-left: 15px;
+}
+
+.botao-adicionar {
+    text-align: center;
+    width: 100%;
+}
+
+#adicionar-transacao {
+    background-color: #333333;
+    color: white;
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#extrato {
+    max-width: 90%;
+    border-top: 1px solid #979797;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 7vh;
+}
+
+.ext-transacoes {
+    color: #adac8adb;
+    font-size: 22px;
+    margin-bottom: 24%;
+}
