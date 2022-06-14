@@ -68,3 +68,76 @@ nav a {
     transform: translateY(300px);
     transition: all .2s linear;
 }
+
+@media only screen and (min-width: 768px){
+    body {
+        margin: 0px;
+        border-bottom: 10px solid #333333;
+        font-family: lato;
+        height: 1024px;
+    }
+
+    .menu {
+        max-width: 100%;
+        background-color: #E0E0E0;
+        align-items: center;
+        display: flex;
+        padding: 15px;
+    }
+
+    .logo{
+        padding-left: 1vh;
+        padding-right: 39vh;
+        height: 27px;
+        width: 30px;
+    }
+    
+    #header {
+        font-size: 20px;
+    }
+
+    .material-icons {
+        font-size: 70px;
+    }
+
+    #check {
+        display: none;
+    }
+
+    #icone {
+        cursor:pointer;
+        padding-left: 125px;
+        padding-right: 33px;
+        z-index: 1;
+    }
+
+    .barra {
+        transition: all .2s linear;
+        font-size: 45px;
+        width: 50%;
+        height: 300px;
+        background-color: #333333;
+        left: -300px;
+    }
+
+    nav {
+        width: 100%;
+        top: 60px;
+    }
+
+    nav a {
+        text-decoration: none;
+    }
+
+    .link {
+        background-color: gray;
+        font-family: lato;
+        transition:all .2s linear;
+        color: #E0E0E0;
+        border-bottom: 2px solid #222;
+    }
+
+    #check:checked ~ .barra {
+        transform: translateY(300px);
+    }
+}
