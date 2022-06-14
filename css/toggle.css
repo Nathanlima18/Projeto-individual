@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: lato, sans-serif;
+}
+
+#menu {
+    display: none;
+}
+
+.app-btn {
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    top: 27px;
+    right: 15px;
+}
+
+.app-menu {
+    width: 77%;
+    background-color: #333333;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -320px;
+}
+
+.app-checkbox:checked + .app-menu {
+    left: 100px;
+    transition: all .2s linear;
+}
+
+.fechar {
+    height: 17px;
+    position: sticky;
+    padding: 25px
+}
+
+.ct{
+    width: 64vh;
+    height: 40px;
+    color: #ffff;
+    font-size: 16px;
+    background-color: #333333;
+    border: 0;
+    cursor: text;
+}
+
+.ct:hover, .ld:hover {
+    background: #c4c4c4;
+    color: #333333;
+}
+
+.ld {
+    width: 155%;
+    height: 40px;
+    color: #ffff;
+    font-size: 16px;
+    background-color: #333333;
+    border: 0;
+    cursor: text;
+}
