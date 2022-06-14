@@ -60,3 +60,69 @@
     border: 0;
     cursor: text;
 }
+
+@media only screen and (min-width: 768px){
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .app-btn {
+        width: 3%;
+        height: 14px;
+        position: absolute;
+        top: 22px;
+        right: 10px;    
+    }
+
+    .app-menu {
+        width: 70%;
+        background-color: #333333;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -700px;
+    }
+
+    .app-checkbox:checked + .app-menu {
+        left: 70vh;
+        transition: all .2s linear;
+    }
+
+    .fechar {
+        height: 18px;
+        position: sticky;
+        padding: 25px
+    }
+
+    .ct{
+        width: 55vh;
+        height: 40px;
+        color: #ffff;
+        font-size: 18px;
+        background-color: #333333;
+        display: block;
+        border: 0;
+        cursor: text;
+    }
+
+    .ct:hover, .ld:hover {
+        background: #c4c4c4;
+        color: #333333;
+    }
+
+    .ld {
+        width: 68vh;
+        height: 40px;
+        color: #ffff;
+        font-size: 18px;
+        display: block;
+        background-color: #333333;
+        border: 0;
+        cursor: text;
+    }
+}
