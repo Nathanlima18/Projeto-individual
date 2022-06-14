@@ -14,6 +14,75 @@
     </head>
 
     <body>
-
+        <div class="menu">  
+            <a href="#">
+                <img src="assets/img/logo.png" class="logo">
+            </a>
+            <h4 id="header">Controle Financeiro</h4>
+            <div class="app">
+                <label for="menu">
+                    <img src="assets/img/menu.png" class="app-btn" alt="menu" />
+                </label>
+    
+                <input id="menu" class="app-checkbox" type="checkbox" />
+                <ul class="app-menu">
+                    <label for="menu">
+                        <img src="assets/img/sidebar.png" class="fechar" />
+                    </label>
+                    <button class="ct">Cadastro de transações</button>
+                    <button class="ld">Limpar dados</button>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <section class="corpo">
+                <p class="nt">Nova Transação</p>
+                <div id="corpo">
+                    <form class="botoes">
+                        <div class="tipo-de-transacao">
+                            <label for="t-transacao">Tipo de transação</label>
+                            <Select id="tipo-de-transacao">
+                                <optgroup tlabel="compra">
+                                    <option value="a"> Compra </option>
+                                    <option value="b"> Venda </option>
+                                </optgroup> 
+                            </Select>
+                        </div>
+                        <section class="mercadoria">        
+                            <div class="nome-da-mercadoria">
+                                <form>
+                                    <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
+                                    <input type="text" id="mercadoria" name="mercadoria">
+                            </form>
+                            </div>
+                        </section>
+                        <section class="valor">        
+                            <div class="v">
+                                <form>
+                                    <label for="valor" class="texto-v">Valor</label>
+                                    <input type="tel" value="R$ 0,00" name="valor" id="valor">
+                                </form>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+                <section class="botao-adicionar">
+                    <div class="botao">
+                        <input type="submit" value="Adicionar Transação" id="adicionar-transacao" name="adicionar-transicao">
+                    </div>  
+                </section>  
+            </section> 
+        
+            <section class="extrato" id="extrato">
+                <h3>Extrato de transações</h3>
+                <br>
+                <br>
+                <div class="ext-transacoes">
+                <p>
+                    Nenhuma transação cadastrada!
+                </p>
+                </div>
+            </section>   
+        </div>
     </body>
 </html>
