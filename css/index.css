@@ -141,3 +141,55 @@ nav a {
         transform: translateY(300px);
     }
 }
+
+@media only screen and (min-width: 1100px) {
+    body {
+        margin: 0px;
+        border-bottom: 10px solid #333333;
+        font-family: lato;
+        height: 834px ;
+    }
+
+    .menu {
+        max-width: 100%;
+        background-color: #E0E0E0;
+        align-items: center;
+        display: flex;
+        padding: 15px;
+    }
+
+    .logo{
+        padding-right: 3vh;
+    }
+    
+    #header {
+        font-size: 19px;
+        padding-right: 114vh;
+    }
+
+    .material-icons {
+        font-size: 70px;
+    }
+
+    #check {
+        display: none;
+    }
+
+    #icone {
+        cursor:pointer;
+        padding-left: 125px;
+        padding-right: 33px;
+        z-index: 1;
+    }
+
+
+    nav {
+        width: 100%;
+        top: 60px;
+    }
+
+    nav a {
+        text-decoration: none;
+    }
+
+}
