@@ -9,13 +9,13 @@
   }
   
   .app-menu {
-    width: 0;
+    width: 250px;
     display: flex;
     background-color: #333333;
-    height: 100vh;
-    position: fixed;
+    height: 1000px;
+    position: absolute;
     top: 0;
-    right: 0;
+    right: -240px;
     overflow-x: hidden;
     flex-direction: column;
     padding-top: 20px;
@@ -24,7 +24,8 @@
   
   .app-checkbox:checked + .app-menu {
     width: 250px;
-    transition: 0.5s;
+    right: 0;
+    transition: 0.8s;
   }
   
   .fechar {
@@ -70,11 +71,10 @@
   }
   
   .menu {
-    width: 95%;
     background-color: #e0e0e0;
     align-items: center;
     display: flex;
-    padding: 10px;
+    padding: 10px 22px 10px 22px;
     justify-content: space-between;
   }
   
