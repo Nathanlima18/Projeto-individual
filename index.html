@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>
-        Controle Financeiro
-    </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./css/index.css">
+        <title>
+            Controle Financeiro
+        </title>
     </head>
 
     <body>
@@ -19,72 +18,95 @@
             </a>
             <h4 id="header">Controle Financeiro</h4>
             <div class="app">
-            <label for="menu">
-                <img src="assets/img/menu.svg" class="app-btn" alt="menu" />
-            </label>
-
-            <input id="menu" class="app-checkbox" type="checkbox" />
-            <ul class="app-menu">
                 <label for="menu">
-                <img src="assets/img/sidebar.svg" class="fechar" />
+                    <img src="assets/img/menu.svg" class="app-btn" alt="menu" />
                 </label>
-                <button class="ct">Cadastro de transações</button>
-                <button class="ld">Limpar dados</button>
-            </ul>
+
+                <input id="menu" class="app-checkbox" type="checkbox" />
+                <ul class="app-menu">
+                    <label for="menu">
+                    <img src="assets/img/sidebar.svg" class="fechar" />
+                    </label>
+                    <button class="ct">Cadastro de transações</button>
+                    <button class="ld">Limpar dados</button>
+                </ul>
             </div>
         </div>
-    <div class="body">
-        <section class="corpo">
-            <p class="nt">Nova Transação</p>
-            <div id="corpo">
-                <form class="botoes">
-                    <div class="tipo-de-transacao">
-                        <label for="t-transacao">Tipo de transação</label>
-                        <Select id="tipo-de-transacao">
-                        <optgroup tlabel="compra">
-                            <option value="a"> Compra </option>
-                            <option value="b"> Venda </option>
-                        </optgroup>
-                        </Select>
-                    </div>
-                    <section class="mercadoria">
-                        <div class="nome-da-mercadoria">
-                        <form>
-                            <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
-                            <input type="text" id="mercadoria" name="mercadoria">
-                        </form>
+        <div class="body">
+            <section class="corpo">
+                <p class="nt">Nova Transação</p>
+                <div id="corpo">
+                    <form class="botoes">
+                        <div class="tipo-de-transacao">
+                            <label for="t-transacao">Tipo de transação</label>
+                            <Select id="tipo-de-transacao">
+                                <optgroup tlabel="compra">
+                                    <option value="a"> Compra </option>
+                                    <option value="b"> Venda </option>
+                                </optgroup>
+                            </Select>
                         </div>
-                    </section>
-                    <section class="valor">
-                        <div class="v">
-                        <form>
-                            <label for="valor" class="texto-v">Valor</label>
-                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="formatMoney(event)">
-                        </form>
-                        </div>
-                    </section>
-                </form>
-            </div>
+                        <section class="mercadoria">
+                            <div class="nome-da-mercadoria">
+                                <form>
+                                    <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
+                                    <input type="text" id="mercadoria" name="mercadoria">
+                                </form>
+                            </div>
+                        </section>
+                        <section class="valor">
+                            <div class="v">
+                                <form>
+                                    <label for="valor" class="texto-v">Valor</label>
+                                    <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="formatMoney(event)">
+                                </form>
+                            </div>
+                        </section>
+                    </form>
+                </div>
 
-            <section class="botao-adicionar">
-                <div class="botao">
-                <input type="submit" value="Adicionar Transação" id="adicionar-transacao" name="adicionar-transicao">
+                <section class="botao-adicionar">
+                    <div class="botao">
+                    <input type="submit" value="Adicionar Transação" id="adicionar-transacao" name="adicionar-transicao">
+                    </div>
+                </section>
+            </section>
+
+            <section class="extrato" id="extrato">
+
+                <h3>Extrato de transações</h3>
+                
+                <div class="etransações">
+                    <div class="cabeça">
+                        <b>Mercadoria</b>
+                        <b>Valor</b>
+                    </div>
+
+                    <div class="valores">
+                        <p class="simbolo">+</p>
+                        <p class="texto"  >Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="numero" >R$ 12.999,99</p>
+                    </div>
+
+                    <div class="valores">
+                        <p class="simbolo">-</p>
+                        <p class="texto"  >Quis nostrud exercitation</p>
+                        <p class="numero" >R$ 99,99</p>
+                    </div>
+
+                    <div class="valores">
+                        <p class="simbolo">+</p>
+                        <p class="texto"  >Lorem ipsum</p>
+                        <p class="numero" >R$ 9,99</p>
+                    </div>
+                    
+                    <div class="total">
+                        <b class="Ttotal">Total<b>
+                        <b class="numero">R$ 12.909,99</b>
+                    </div>
                 </div>
             </section>
-        </section>
-
-        <section class="extrato" id="extrato">
-        <h3>Extrato de transações</h3>
-        <br>
-        <br>
-        <div class="ext-transacoes">
-            <p>
-            Nenhuma transação cadastrada!
-            </p>
         </div>
-        </section>
-    </div>
-    <footer> </footer>
     </body>
 
 </html>
