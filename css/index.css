@@ -543,17 +543,17 @@
     }
   
     .app-menu {
-        display: flex;
-        position: unset;
-        width: 335px;
-        height: auto;
-        right: 0px;
-        border: 0px;
-        padding: 4px;
-        margin-right: 30px;
-        background-color: #ffff;
-        flex-direction: row;
-        flex-wrap: nowrap;
+      display: flex;
+      position: unset;
+      width: 335px;
+      height: auto;
+      right: 0px;
+      border: 0px;
+      padding: 4px;
+      margin-right: 30px;
+      background-color: #ffff;
+      flex-direction: row;
+      flex-wrap: nowrap;
     }
   
     .fechar {
@@ -561,27 +561,27 @@
     }
   
     .ct {
-        width: 200px;
-        font-size: 16px;
-        background-color: #ffff;
-        color: #333333;
-        font-family: 'Lato';
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        border: 0;
+      width: 200px;
+      font-size: 16px;
+      background-color: #ffff;
+      color: #333333;
+      font-family: 'Lato';
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      border: 0;
     }
   
     .ld {
-        width: 40%;
-        font-size: 16px;
-        background-color: #ffff;
-        color: #333333;
-        font-family: 'Lato';
-        padding: 0;
-        margin-right: 0;
-        text-align: center;
-        border-left: 1px solid #979797;
+      width: 40%;
+      font-size: 16px;
+      background-color: #ffff;
+      color: #333333;
+      font-family: 'Lato';
+      padding: 0;
+      margin-right: 0;
+      text-align: center;
+      border-left: 1px solid #979797;
     }
   
     .body {
@@ -589,11 +589,11 @@
     }
   
     .corpo {
-      width: 45%;
+      width: 105%;
       font-size: 16px;
-      margin: 20px;
+      margin: 26px 20px 0px 20px;
       border: 1px solid #979797;
-      border-radius: 7px;
+      border-radius: 4px;
       padding: 20px;
     }
   
@@ -606,14 +606,18 @@
     }
   
     #corpo {
-        font-size: 16px;
-        display: flex;
-        width: 100%;
-        flex-direction: column;
+      font-size: 16px;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-content: space-around;
     }
 
     .botoes {
+      display: flex;
       margin-right: 12px;
+      flex-direction: column;
+      align-content: space-around;
     }
   
     select {
@@ -632,45 +636,45 @@
     }
   
     #mercadoria {
-        height: 32px;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 15px;
-        border-radius: 4px;
-        border: 1px solid #979797;
-        color: #979797;
+      height: 32px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #979797;
+      color: #979797;
     }
   
     .valor {
-        width: 98%;
-        font-size: 16px;
+      width: 98%;
+      font-size: 16px;
     }
   
     #valor {
-        width: 98%;
-        height: 32px;
-        font-size: 14px;
-        margin-top: 10px;
-        margin-bottom: 15px;
-        border-radius: 4px;
-        border: 1px solid #979797;
-        color: #979797;
+      width: 101%;
+      height: 32px;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #979797;
+      color: #979797;
     }
   
     .botao-adicionar {
-        width: 98%;
-        margin-top: 15px;
+      width: 98%;
+      margin-top: 15px;
     }
   
     #adicionar-transacao {
-        background-color: #333333;
-        text-align: center;
-        color: white;
-        width: 100%;
-        height: 37px;
-        font-size: 16px;
-        border: 0;
-        border-radius: 4px;
+      background-color: #333333;
+      text-align: center;
+      color: white;
+      width: 102%;
+      height: 37px;
+      font-size: 16px;
+      border: 0;
+      border-radius: 4px;
     }
   
     #extrato {
@@ -694,20 +698,17 @@
     }
   
     .menu {
-      max-width: 100%;
+      width: 100%;
       background-color: #e0e0e0;
       align-items: center;
       display: flex;
       padding: 15px;
     }
   
-    .logo {
-      padding-right: 3vh;
-    }
-  
     #header {
-        width: 411px;
-        font-size: 20px;
+      width: 411px;
+      font-size: 20px;
+      padding: 0px 0px 0px 20px;
     }
   
     .material-icons {
@@ -741,5 +742,32 @@
       
     }
 
+    #extrato {
+      font-size: 16px;
+      border: 0;
+      width: 180%;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .total {
+      display: flex;
+      margin-top: 3px;
+      border-top: 1px solid #9797;
+      padding: 11px 0px 0px 88px;
+      flex-direction: row;
+    }
+
+    .Ttotal {
+      width: 0;
+      display: flex;
+    }
+
+    .Ntotal {
+      width: 87px;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 94vh;
+    }
   }
   
