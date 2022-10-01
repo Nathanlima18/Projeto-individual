@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="./css/index.css">
         <title>
             Controle Financeiro
@@ -13,9 +12,9 @@
 
     <body>
         <div class="menu">
-            <a href="#">
+            
             <img src="assets/img/logo.svg" class="logo">
-            </a>
+        
             <h4 id="header">Controle Financeiro</h4>
             <div class="app">
                 <label for="menu">
@@ -27,86 +26,51 @@
                     <label for="menu">
                     <img src="assets/img/sidebar.svg" class="fechar" />
                     </label>
-                    <button class="ct">Cadastro de transações</button>
-                    <button class="ld">Limpar dados</button>
+                    <button class="ct" onclick="focusForm()">Cadastro de transações</button>
+                    <button class="ld" onclick="clearTransaction()">Limpar dados</button>
                 </ul>
             </div>
         </div>
-        <div class="body">
-            <section class="corpo">
-                <p class="nt">Nova Transação</p>
-                <div id="corpo">
-                    <form class="botoes">
-                        <div class="tipo-de-transacao">
-                            <label for="t-transacao">Tipo de transação</label>
-                            <Select id="tipo-de-transacao">
-                                <optgroup tlabel="compra">
-                                    <option value="a"> Compra </option>
-                                    <option value="b"> Venda </option>
-                                </optgroup>
-                            </Select>
-                        </div>
-                        <section class="mercadoria">
-                            <div class="nome-da-mercadoria">
-                                <form>
-                                    <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
-                                    <input type="text" id="mercadoria" name="mercadoria">
-                                </form>
-                            </div>
-                        </section>
-                        <section class="valor">
-                            <div class="v">
-                                <form>
-                                    <label for="valor" class="texto-v">Valor</label>
-                                    <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="formatMoney(event)">
-                                </form>
-                            </div>
-                        </section>
-                    </form>
-                </div>
-
-                <section class="botao-adicionar">
-                    <div class="botao">
-                        <input type="submit" value="Adicionar Transação" id="adicionar-transacao">
+        
+        <section class="corpo">
+            <p class="nt">Nova Transação</p>
+            <div id="corpo">
+                <form class="botoes" onsubmit="console.log('oi'); return false">
+                    <div class="tipo-de-transacao" id="tipo-de-transacao">
+                        <label for="t-transacao">Tipo de transação</label>
+                        <Select>
+                            <option value="Compra"> Compra </option>
+                            <option value="Venda"> Venda </option>
+                        </Select>
                     </div>
-                </section>
-            </section>
-
-            <section class="extrato" id="extrato">
-
-                <h3>Extrato de transações</h3>
                 
-                <div class="etransações">
-                    <div class="cabeça">
-                        <b>Mercadoria</b>
-                        <b>Valor</b>
+                    <div class="nome-da-mercadoria">
+                        <form>
+                            <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
+                            <input required type="text" id="mercadoria" name="mercadoria">
+                        </form>
                     </div>
+                
+                    <div class="v">
+                        <form>
+                            <label for="valor" class="texto-v">Valor</label>
+                            <input required type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="campoValor(event)" onfocus="this.value = ''">
+                        </form>
+                    </div>
+                    <input type="submit" value="Adicionar Transação" class="adicionar-transacao"/>
+                </form>
+            </div>    
+        </section>
 
-                    <div class="valores">
-                        <p class="simbolo">+</p>
-                        <p class="texto"  >Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="numero" >R$ 12.999,99</p>
-                    </div>
-
-                    <div class="valores">
-                        <p class="simbolo">-</p>
-                        <p class="texto"  >Quis nostrud exercitation</p>
-                        <p class="numero" >R$ 99,99</p>
-                    </div>
-
-                    <div class="valores">
-                        <p class="simbolo">+</p>
-                        <p class="texto"  >Lorem ipsum</p>
-                        <p class="numero" >R$ 9,99</p>
-                    </div>
-                    
-                    <div class="total">
-                        <b class="Ttotal">Total<b>
-                        <b class="Ntotal">R$ 12.909,99</b>
-                    </div>
+        <section class="extrato" id="extrato">
+            <h3>Extrato de transações</h3>
+            <div class="etransações">
+                <div class="cabeça">
+                    <b>Mercadoria</b>
+                    <b>Valor</b>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+        <script src="./js/index.js"></script>
     </body>
-
 </html>

@@ -191,7 +191,7 @@
     width: 100%;
   }
   
-  #adicionar-transacao {
+  .adicionar-transacao {
     background-color: #333333;
     color: white;
     width: 100%;
@@ -423,11 +423,12 @@
       padding: 0px 0px 0px 5px;
     }
   
-    .botao-adicionar {
-      text-align: end;
+    .atransacao {
+      display: flex;
+      justify-content: flex-end;
     }
   
-    #adicionar-transacao {
+    .adicionar-transacao {
       background-color: #333333;
       color: white;
       text-align: center;
@@ -661,12 +662,12 @@
       color: #979797;
     }
   
-    .botao-adicionar {
-      width: 98%;
-      margin-top: 15px;
+    .atransacao {
+      display: flex;
+      justify-content: flex-end;
     }
   
-    #adicionar-transacao {
+    .adicionar-transacao {
       background-color: #333333;
       text-align: center;
       color: white;
