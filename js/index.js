@@ -1,7 +1,7 @@
-const letterPattern = /[^0-9]/;
+const valorTabela = /[^0-9]/;
 
 function campoValor(event){
-	if(letterPattern.test(event.key)){
+	if(valorTabela.test(event.key)){
 		event.preventDefault();
 		alert('Apenas números são permitidos!')
         return false
@@ -22,57 +22,60 @@ function campoValor(event){
 	event.target.value = valor;
 }
 
-function tabelaDetransações() {
+function testaFormulario(e) {
+    e.preventDefault();
 
-    var transações = [
-        {
-            simbolo: '-',
-            texto: 'Motorola EDGE 30',
-            numero: '2.800,00',
-        }
-    ]
 
-    console.log(document.querySelectorAll('div.etransações .tabela'))
+    var tabelaPura = localStorage.getItem('tabelaDetransação')
+    if (tabelaPura != null) {
+        var tabelaDetransação = JSON.parse(tabelaPura)
+    } else {
+        var tabelaDetransação = [];
+    }
 
-    linhasTabela = [...document.querySelectorAll('div.etransações .tabela')];
-    linhasTabela.forEach((element) => {
-        element.remove()
+    //tabelaDetransação.push({
+    //    simbolo: ,
+    //    texto: e.target.elements['mercadoria'].value,
+    //    valor:
+    //})
 
-    })
-    for (tabela in transações) {
-        document.querySelector('div.etransações').innerHTML += `
-        <div class="tabela">
+    console.log(e.target.elements['Venda'])
+}
 
-            <div class="valores">
-                <p class="simbolo">+</p>
-                <p class="texto"  >Lorem ipsum dolor sit amet consectetur</p>
-                <p class="numero" >R$ 12.999,99</p>
-            </div>
+var tabelaPura = localStorage.getItem('tabelaDetransação')
+    if (tabelaPura != null) {
+        var tabelaDetransação = JSON.parse(tabelaPura)
+    } else {
+        var tabelaDetransação = [];
+    }
 
-            <div class="valores">
-                <p class="simbolo">-</p>
-                <p class="texto"  >Quis nostrud exercitation</p>
-                <p class="numero" >R$ 99,99</p>
-            </div>
 
-            <div class="valores">
-                <p class="simbolo">+</p>
-                <p class="texto"  >Lorem ipsum</p>
-                <p class="numero" >R$ 9,99</p>
-            </div>
-
-            <div class="total">
-                <b class="Ttotal">Total<b>
-                <b class="Ntotal">R$ 12.909,99</b>
-            </div>
-        </div>`
+function criarTabela() {
+    for (transacao in tabelaDetransação) {
+        document.querySelector('table.tabelaT').innerHTML +=
+       `<table class="tabela">
+            <tbody>
+                <tr class="tr1">
+                    <td>${tabelaDetransação[transacao].simbolo ? '+' : '-'}</td>
+                    <td class="texto1">${tabelaDetransação[transacao].texto}</td>
+                    <td>${tabelaDetransação[transacao].valor}</td>
+                </tr>
+            </tbody>
+        </table>`
+        //<p class="lucro">${tabelaDetransação[transacao].lucro ? '[LUCRO]' : '[PREJUIZO]'}</p>
     }
 }
 
-tabelaDetransações()
-//function desenhaTabela () {
-//    currentLines = [...document.querySelectorAll('etransações .dinamic-content')];
-//    currentLines.forEach((element) => {
-//        element.remove()
-//    });
-//}
+
+function limparDados(e) {
+    tabelaDetransação.splice(e)
+    var L;
+    var r=confirm("Quer mesmo limpar todos os dados?");
+    if (r==true) {
+        L="Dados apagados!";
+    } else  {
+        L="Ação cancelada"
+    }
+    criarTabela();
+    localStorage.removeItem('tabelaDetransação')
+}

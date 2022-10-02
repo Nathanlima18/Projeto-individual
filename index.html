@@ -12,9 +12,7 @@
 
     <body>
         <div class="menu">
-            
             <img src="assets/img/logo.svg" class="logo">
-        
             <h4 id="header">Controle Financeiro</h4>
             <div class="app">
                 <label for="menu">
@@ -26,8 +24,8 @@
                     <label for="menu">
                     <img src="assets/img/sidebar.svg" class="fechar" />
                     </label>
-                    <button class="ct" onclick="focusForm()">Cadastro de transações</button>
-                    <button class="ld" onclick="clearTransaction()">Limpar dados</button>
+                    <button class="ct">Cadastro de transações</button>
+                    <input type="submit" class="ld" onclick="limparDados()" value ="Limpar Dados">              
                 </ul>
             </div>
         </div>
@@ -35,42 +33,57 @@
         <section class="corpo">
             <p class="nt">Nova Transação</p>
             <div id="corpo">
-                <form class="botoes" onsubmit="console.log('oi'); return false">
-                    <div class="tipo-de-transacao" id="tipo-de-transacao">
-                        <label for="t-transacao">Tipo de transação</label>
-                        <Select>
-                            <option value="Compra"> Compra </option>
-                            <option value="Venda"> Venda </option>
-                        </Select>
-                    </div>
-                
-                    <div class="nome-da-mercadoria">
-                        <form>
-                            <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
-                            <input required type="text" id="mercadoria" name="mercadoria">
-                        </form>
-                    </div>
-                
-                    <div class="v">
-                        <form>
-                            <label for="valor" class="texto-v">Valor</label>
-                            <input required type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="campoValor(event)" onfocus="this.value = ''">
-                        </form>
-                    </div>
-                    <input type="submit" value="Adicionar Transação" class="adicionar-transacao"/>
+                <form class="formulario" onsubmit="testaFormulario(event)">
+                    <section>
+                        <div class="tipo-de-transacao" id="tipo-de-transacao">
+                            <label for="t-transacao">Tipo de transação</label>
+                            <Select class="botão-compraevenda" name="compraevenda" id="compraEvenda" form="compraevenda">
+                                <option value="Compra"> Compra </option>
+                                <option value="Venda"> Venda </option>
+                            </Select>
+                        </div>
+                    
+                        <div class="nome-da-mercadoria">
+                            <form>
+                                <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
+                                <input required type="text" id="mercadoria" name="mercadoria">
+                            </form>
+                        </div>
+
+                        <div class="v">
+                            <form>
+                                <label for="valor" class="texto-v">Valor</label>
+                                <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="campoValor(event)">
+                            </form>
+                        </div>
+                        <div class="badicionar">
+                            <input type="submit" value="Adicionar Transação" class="adicionar-transacao"/>
+                        </div>
+                    </section>
                 </form>
             </div>    
         </section>
 
         <section class="extrato" id="extrato">
             <h3>Extrato de transações</h3>
-            <div class="etransações">
-                <div class="cabeça">
-                    <b>Mercadoria</b>
-                    <b>Valor</b>
-                </div>
-            </div>
+            
+
+            <div class="transacoes"></div>
         </section>
+        <table class="tabelaT">
+            <thead class="titulo">
+                <tr id="linha1">
+                    <td></td>
+                    <td id="titulo1">
+                        <strong>Mercadoria</strong>
+                    </td>
+                    <td id="titulo2">
+                        <strong>Valor</strong>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        <div class="nenhumaTransação"></div>
         <script src="./js/index.js"></script>
     </body>
 </html>

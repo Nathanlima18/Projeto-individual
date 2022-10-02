@@ -227,58 +227,71 @@
     bottom: 0;
     border-bottom: 8px solid #333333;
   }
-  
-  .etrasações {
-    margin-top: 19px;
-  }
 
-  .cabeça {
+  .tabelaT {
     display: flex;
-    justify-content: space-between;
-    padding: 19px 42px 3px 50px;
-    border-bottom: 1px solid #9797;
+    flex-direction: column;
+    width: 100%;
   }
 
-  .valores {
+  .titulo {
+    width: 100%;
+  }
+
+  #linha1 {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #9797;
-    padding: 7px 0px;
-    max-width: 100%;
   }
 
-  .simbolo {
-    width: 11%;
+  #titulo1{
+    width: 30%;
   }
 
-  .texto {
+  #titulo2 {
+    width: 28%;
+    padding-left: 150px;
+  }
+  tbody {
+    border-top: 1px solid #979797;
+  }
+
+  .tr1 {
     display: flex;
+    align-items: center;
+    width: 127%;
+  }
+
+  .texto1 {
+    padding: 0px 12px 0px 8px;
+    width: 53%;
     text-align: initial;
-    width: 55%;
-    justify-content: flex-start;
   }
 
-  .numero {
-    width: 35%;
-    text-align: end;
-    padding-right: 10px;    
+  .texto2 {
+    padding: 0px 121px 0px 8px;
+  }
+  
+  .tbody3 {
+    border-bottom: 1px solid #979797;
+    margin-bottom: 2px;
+  }
+
+  .texto3 {
+    padding: 0px 204px 0px 8px;
   }
 
   .total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3px;
-    border-top: 1px solid #9797;
-    padding: 11px 0px 0px 30px;
-  }
-  
-  .Ttotal {
-    display: flex;
-    text-align: initial;
-    width: 100%;
-    justify-content: space-between;
+    border-top: 1px solid #979797;
   }
 
+  #total {
+    padding: 0px 215px 0px 15px;
+  }
+
+  .lucro {
+    text-align: end;
+    font-size: 10px;
+    padding-right: 10px;
+  }
   @media only screen and (min-width: 768px) {
     * {
       margin: 0;
@@ -751,24 +764,64 @@
       text-align: center;
     }
 
+    .tabela {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .titulo {
+      border-bottom: 1px solid #979797;
+      width: 100%;
+    }
+
+    .linha1 {
+      display: flex;
+    }
+
+    #titulo1{
+      width: 30%;
+    }
+
+    #titulo2 {
+      width: 28%;
+      padding-left: 150px;
+    }
+    tbody {
+      border-bottom: 1px solid #979797;
+    }
+
+    .tr1 {
+      display: flex;
+      align-items: center;
+      width: 127%;
+    }
+
+    .texto1 {
+      padding: 0px 12px 0px 8px;
+      width: 53%;
+      text-align: initial;
+    }
+
+    .texto2 {
+      padding: 0px 121px 0px 8px;
+    }
+    
+    .tbody3 {
+      border-bottom: 1px solid #979797;
+      margin-bottom: 2px;
+    }
+
+    .texto3 {
+      padding: 0px 204px 0px 8px;
+    }
+
     .total {
-      display: flex;
-      margin-top: 3px;
-      border-top: 1px solid #9797;
-      padding: 11px 0px 0px 88px;
-      flex-direction: row;
+      border-top: 1px solid #979797;
     }
 
-    .Ttotal {
-      width: 0;
-      display: flex;
-    }
-
-    .Ntotal {
-      width: 87px;
-      display: flex;
-      justify-content: space-between;
-      padding-left: 94vh;
+    #total {
+      padding: 0px 215px 0px 15px;
     }
   }
   
