@@ -39,7 +39,7 @@ function testaFormulario(e) {
     //    valor:
     //})
 
-    console.log(e.target.elements['Venda'])
+    //console.log(e.target.elements['Venda'])
 }
 
 var tabelaPura = localStorage.getItem('tabelaDetransação')
