@@ -30,11 +30,11 @@
             </div>
         </div>
         
-        <section class="corpo">
-            <p class="nt">Nova Transação</p>
-            <div id="corpo">
+        <div class="controleFinanceiro">
+            <section class="corpo">
+                <p class="nt">Nova Transação</p>
                 <form class="formulario" onsubmit="testaFormulario(event)">
-                    <section>
+                    <div id="corpo">
                         <div class="tipo-de-transacao" id="tipo-de-transacao">
                             <label for="t-transacao">Tipo de transação</label>
                             <Select class="botão-compraevenda" name="compraevenda" id="compraEvenda" form="compraevenda">
@@ -44,46 +44,43 @@
                         </div>
                     
                         <div class="nome-da-mercadoria">
-                            <form>
-                                <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
-                                <input required type="text" id="mercadoria" name="mercadoria">
-                            </form>
+                            <label for="nmercadoria" class="texto-m">Nome da mercadoria</label>
+                            <input required type="text" id="mercadoria" name="mercadoria">
                         </div>
 
                         <div class="v">
-                            <form>
-                                <label for="valor" class="texto-v">Valor</label>
-                                <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="campoValor(event)">
-                            </form>
+                            <label for="valor" class="texto-v">Valor</label>
+                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="campoValor(event)">
                         </div>
-                        <div class="badicionar">
-                            <input type="submit" value="Adicionar Transação" class="adicionar-transacao"/>
-                        </div>
-                    </section>
-                </form>
-            </div>    
-        </section>
 
-        <section class="extrato" id="extrato">
-            <h3>Extrato de transações</h3>
+                    </div>
+                    <div class="badicionar">
+                        <input type="submit" value="Adicionar Transação" class="adicionar-transacao"/>
+                    </div>
+                </form>  
+            </section>
+
+
+            <section class="extrato" id="extrato">
+                <h3>Extrato de transações</h3>
             
-
-            <div class="transacoes"></div>
-        </section>
-        <table class="tabelaT">
-            <thead class="titulo">
-                <tr id="linha1">
-                    <td></td>
-                    <td id="titulo1">
-                        <strong>Mercadoria</strong>
-                    </td>
-                    <td id="titulo2">
-                        <strong>Valor</strong>
-                    </td>
-                </tr>
-            </thead>
-        </table>
-        <div class="nenhumaTransação"></div>
+                <table class="tabelaT">
+                    <thead class="titulo">
+                        <tr id="linha1">
+                            <td></td>
+                            <td id="titulo1">
+                                <strong>Mercadoria</strong>
+                            </td>
+                            <td id="titulo2">
+                                <strong>Valor</strong>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            <div class="nenhumaTransação"></div>
+            </section>
+        </div>
         <script src="./js/index.js"></script>
+        <footer></footer>
     </body>
 </html>

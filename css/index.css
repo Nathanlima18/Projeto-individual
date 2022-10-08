@@ -1,355 +1,282 @@
 * {
+  margin: 0;
+  padding: 0;
+  font-family: lato, sans-serif;
+  font-size: 14px;
+}
+
+#menu {
+  display: none;
+}
+
+.app-menu {
+  width: 351px;
+  display: flex;
+  background-color: #333333;
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  right: -351px;
+  overflow-x: hidden;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: 0.5s;
+}
+
+.app-checkbox:checked + .app-menu {
+  width: 351px;
+  right: 0;
+  transition: 0.8s;
+}
+
+.fechar {
+  display: flex;
+  width: 16px;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.ct { 
+  text-align: end;
+  padding: 10px 0px 10px 0px;
+  margin-right: 15px;
+  color: #ffff;
+  font-size: 16px;
+  background-color: #333333;
+  border: 0;
+  cursor: text;
+}
+
+.ct:hover,
+.ld:hover {
+  background: #c4c4c4;
+  color: #333333;
+}
+
+.ld {
+  text-align: end;
+  margin-right: 15px;
+  padding: 10px 0px 10px 0px;
+  color: #ffff;
+  font-size: 16px;
+  background-color: #333333;
+  border: 0;
+  cursor: text;
+}
+
+body {
+  margin: 0px;
+  font-family: lato;
+}
+
+.menu {
+  width: 100%;
+  background-color: #e0e0e0;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  padding: 9px 0px;
+}
+
+#header {
+  font-size: 20px;
+  color: #333333;
+  padding: 0px 30px;
+}
+
+.material-icons {
+  font-size: 70px;
+}
+
+#check {
+  display: none;
+}
+
+#icone {
+  cursor: pointer;
+  padding-left: 125px;
+  padding-right: 33px;
+  z-index: 1;
+}
+
+.barra {
+  transition: all 0.2s linear;
+  font-size: 45px;
+  width: 50%;
+  height: 300px;
+  background-color: #333333;
+  left: -300px;
+}
+
+nav {
+  width: 100%;
+  top: 60px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.link {
+  background-color: gray;
+  font-family: lato;
+  transition: all 0.2s linear;
+  color: #e0e0e0;
+  border-bottom: 2px solid #222;
+}
+
+#check:checked ~ .barra {
+  transform: translateY(300px);
+  transition: all 0.2s linear;
+}
+
+.corpo {
+  font-size: 14px;
+  padding: 26px 20px 28px;
+}
+
+.nt {
+  display: none;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  font-size: 14px;
+  display: flex;
+  padding: 5px 12px;
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  color: #979797;
+}
+
+.mercadoria {
+  font-size: 14px;
+}
+
+#mercadoria {
+  margin-top: 6px;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 5px 12px;
+  width: 93%;
+  border: 1px solid #979797;
+  border-radius: 4px;
+}
+
+.valor {
+  font-size: 14px;
+  width: 100%;
+}
+
+#valor {
+  width: 93%;
+  display: flex;
+  padding: 5px 12px;
+  font-size: 14px;
+  margin-top: 6px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  border: 1px solid #979797;
+  color: #979797;
+}
+
+.botao-adicionar {
+  text-align: center;
+  width: 100%;
+}
+
+.adicionar-transacao {
+  background-color: #333333;
+  color: white;
+  width: 100%;
+  display: flex;
+  padding: 5px 12px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  justify-content: space-around;
+}
+
+#extrato {
+  max-width: 90%;
+  border-top: 1px solid #979797;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 41px;
+  margin-bottom: 19px;
+}
+
+.ext-transacoes {
+  color: #adac8adb;
+  font-size: 20px;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-bottom: 8px solid #333333;
+}
+.tabelaT {
+  text-align: center;
+  width: 90%;
+}
+
+#titulo1 {
+  padding-right: 165px;
+}
+
+@media only screen and (min-width: 768px) {
+  * {
     margin: 0;
     padding: 0;
-    font-family: lato, sans-serif;
-    font-size: 14px;
   }
-  
+
   #menu {
     display: none;
   }
-  
+
   .app-menu {
-    width: 351px;
+    width: 0;
     display: flex;
     background-color: #333333;
-    height: 1000px;
-    position: absolute;
+    position: fixed;
+    height: 100vh;
+    position: fixed;
     top: 0;
-    right: -351px;
-    overflow-x: hidden;
+    right: 0;
     flex-direction: column;
     padding-top: 20px;
+    right: -351px;
     transition: 0.5s;
   }
-  
+
   .app-checkbox:checked + .app-menu {
-    width: 351px;
+    width: 252px;
     right: 0;
-    transition: 0.8s;
+    transition: 0.2s;
   }
-  
+
   .fechar {
-    display: flex;
-    width: 16px;
-    margin-left: 20px;
-    padding: 10px;
-  }
-  
-  .ct { 
-    text-align: end;
-    padding: 10px 0px 10px 0px;
-    margin-right: 15px;
-    color: #ffff;
-    font-size: 16px;
-    background-color: #333333;
-    border: 0;
-    cursor: text;
-  }
-  
-  .ct:hover,
-  .ld:hover {
-    background: #c4c4c4;
-    color: #333333;
-  }
-  
-  .ld {
-    text-align: end;
-    margin-right: 15px;
-    padding: 10px 0px 10px 0px;
-    color: #ffff;
-    font-size: 16px;
-    background-color: #333333;
-    border: 0;
-    cursor: text;
-  }
-  
-  body {
-    margin: 0px;
-    font-family: lato;
-  }
-  
-  .menu {
-    width: 100%;
-    background-color: #e0e0e0;
-    align-items: center;
-    justify-content: space-around;
-    display: flex;
-    padding: 9px 0px;
-  }
-  
-  #header {
-    font-size: 20px;
-    color: #333333;
-    padding: 0px 30px;
-  }
-  
-  .material-icons {
-    font-size: 70px;
-  }
-  
-  #check {
-    display: none;
-  }
-  
-  #icone {
-    cursor: pointer;
-    padding-left: 125px;
-    padding-right: 33px;
-    z-index: 1;
-  }
-  
-  .barra {
-    transition: all 0.2s linear;
-    font-size: 45px;
-    width: 50%;
-    height: 300px;
-    background-color: #333333;
-    left: -300px;
-  }
-  
-  nav {
-    width: 100%;
-    top: 60px;
-  }
-  
-  nav a {
-    text-decoration: none;
-  }
-  
-  .link {
-    background-color: gray;
-    font-family: lato;
-    transition: all 0.2s linear;
-    color: #e0e0e0;
-    border-bottom: 2px solid #222;
-  }
-  
-  #check:checked ~ .barra {
-    transform: translateY(300px);
-    transition: all 0.2s linear;
-  }
-  
-  .corpo {
-    font-size: 14px;
-    padding: 20px;
-  }
-  
-  .nt {
-    display: none;
-  }
-  
-  .botoes {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  select {
-    font-size: 14px;
-    display: flex;
-    padding: 5px 12px;
-    width: 100%;
-    margin-top: 6px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    color: #979797;
-  }
-  
-  .mercadoria {
-    font-size: 14px;
-  }
-  
-  #mercadoria {
-    margin-top: 6px;
-    display: flex;
-    margin-bottom: 15px;
-    padding: 5px 12px;
-    width: 93%;
-    border: 1px solid #979797;
-    border-radius: 4px;
-  }
-  
-  .valor {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  #valor {
-    width: 93%;
-    display: flex;
-    padding: 5px 12px;
-    font-size: 14px;
-    margin-top: 6px;
-    margin-bottom: 25px;
-    border-radius: 4px;
-    border: 1px solid #979797;
-    color: #979797;
-  }
-  
-  .botao-adicionar {
-    text-align: center;
-    width: 100%;
-  }
-  
-  .adicionar-transacao {
-    background-color: #333333;
-    color: white;
-    width: 100%;
-    display: flex;
-    padding: 5px 12px;
-    font-size: 14px;
-    border: 0;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    justify-content: space-around;
-  }
-  
-  #extrato {
-    max-width: 90%;
-    border-top: 1px solid #979797;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  h3 {
-    font-size: 18px;
-    margin-top: 41px;
-  }
-  
-  .ext-transacoes {
-    color: #adac8adb;
-    font-size: 20px;
-  }
-
-  footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    border-bottom: 8px solid #333333;
-  }
-
-  .tabelaT {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .titulo {
-    width: 100%;
-  }
-
-  #linha1 {
-    display: flex;
-  }
-
-  #titulo1{
-    width: 30%;
-  }
-
-  #titulo2 {
-    width: 28%;
-    padding-left: 150px;
-  }
-  tbody {
-    border-top: 1px solid #979797;
-  }
-
-  .tr1 {
-    display: flex;
-    align-items: center;
-    width: 127%;
-  }
-
-  .texto1 {
-    padding: 0px 12px 0px 8px;
-    width: 53%;
-    text-align: initial;
-  }
-
-  .texto2 {
-    padding: 0px 121px 0px 8px;
-  }
-  
-  .tbody3 {
-    border-bottom: 1px solid #979797;
-    margin-bottom: 2px;
-  }
-
-  .texto3 {
-    padding: 0px 204px 0px 8px;
-  }
-
-  .total {
-    border-top: 1px solid #979797;
-  }
-
-  #total {
-    padding: 0px 215px 0px 15px;
-  }
-
-  .lucro {
-    text-align: end;
-    font-size: 10px;
-    padding-right: 10px;
-  }
-  @media only screen and (min-width: 768px) {
-    * {
-      margin: 0;
-      padding: 0;
-    }
-  
-    #menu {
-      display: none;
-    }
-  
-    .app-menu {
-      width: 0;
       display: flex;
-      background-color: #333333;
-      position: fixed;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      right: 0;
-      flex-direction: column;
-      padding-top: 20px;
-      right: -351px;
-      transition: 0.5s;
-    }
-  
-    .app-checkbox:checked + .app-menu {
-      width: 252px;
-      right: 0;
-      transition: 0.2s;
-    }
-  
-    .fechar {
-        display: flex;
-        width: 16px;
-        height: 16px;
-        margin-left: 15px;
-        padding: 10px;
-    }
-  
-    .ct {
-        width: 100%;
-        color: #ffff;
-        font-size: 16px;
-        padding: 10px;
-        margin-right: 15px;
-        text-align: end;
-        background-color: #333333;
-        border: 0;
-        cursor: text;
-    }
-  
-    .ct:hover,
-    .ld:hover {
-      background: #c4c4c4;
-      color: #333333;
-    }
-  
-    .ld {
+      width: 16px;
+      height: 16px;
+      margin-left: 15px;
+      padding: 10px;
+  }
+
+  .ct {
       width: 100%;
       color: #ffff;
       font-size: 16px;
@@ -359,469 +286,448 @@
       background-color: #333333;
       border: 0;
       cursor: text;
-    }
-  
-    .corpo {
-      font-size: 18px;
-      margin: 15px;
-      margin-bottom: 40px;
-      border: 1px solid #979797;
-      border-radius: 7px;
-      padding: 20px;
-    }
-  
-    .nt {
-      display: inherit;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-  
-    #corpo {
-      font-size: 14px; 
-      display: flex; 
-      width: 100%; 
-      justify-content: center;
-    }
-  
-    .botoes {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      flex-direction: row;
-    }
-  
-    select {
-      font-size: 14px;
-      display: flex;
-      height: 32px;
-      width: 150px;
-      margin-top: 10px;
-      margin-right: 15px;
-      border-radius: 4px;
-      border: 1px solid #979797;
-      color: #979797;
-      justify-content: space-around;
-      padding: 0px;
-    }
-  
-    .mercadoria {
-      font-size: 14px;
-    }
-  
-    #mercadoria {
-      display: flex;
-      height: 32px;
-      width: 348px;
-      margin: 9px 15px 0px 0px;
-      border: 1px solid #979797;
-      border-radius: 4px;
-      padding: 0px;
-    }
-  
-    .valor {
-      width: 22%;
-      font-size: 14px;
-    }
-  
-    #valor {
-      width: 150px;
-      height: 32px;
-      font-size: 14px;
-      margin-top: 9px;
-      border-radius: 4px;
-      border: 1px solid #979797;
-      color: #979797;
-      padding: 0px 0px 0px 5px;
-    }
-  
-    .atransacao {
-      display: flex;
-      justify-content: flex-end;
-    }
-  
-    .adicionar-transacao {
-      background-color: #333333;
-      color: white;
-      text-align: center;
-      width: 200px;
-      height: 32px;
-      font-size: 14px;
-      border: 0;
-      border-radius: 4px;
-      display: inline;
-      padding: 0;
-      margin: 0;
-      justify-content: space-evenly;
-      flex-direction: row-reverse;
-    }
-  
-    #extrato {
-      max-width: 93%;
-      border-top: 1px solid #979797;
-      margin: 0 auto;
-      border: 0;
-      text-align: center;
-    }
-  
-    .ext-transacoes {
-      color: #adac8adb;
-      font-size: 20px;
-    }
-  
-    body {
-      margin: 0px;
-      border-bottom: 10px solid #333333;
-      font-family: lato;
-      height: 1024px;
-    }
-  
-    .menu {
-      width: 94%;
-      background-color: #e0e0e0;
-      align-items: center;
-      display: flex;
-      padding: 10px 22px 10px 22px;
-      justify-content: space-between;
-    }
-    
-    #header {
-      font-size: 20px;
-    }
-  
-    .material-icons {
-      font-size: 70px;
-    }
-  
-    #check {
-      display: none;
-    }
-  
-    #icone {
-      cursor: pointer;
-      padding-left: 125px;
-      padding-right: 33px;
-      z-index: 1;
-    }
-  
-    .barra {
-      transition: all 0.2s linear;
-      font-size: 45px;
-      width: 50%;
-      height: 300px;
-      background-color: #333333;
-      left: -300px;
-    }
-  
-    nav {
-      width: 100%;
-      top: 60px;
-    }
-  
-    nav a {
-      text-decoration: none;
-    }
-  
-    .link {
-      background-color: gray;
-      font-family: lato;
-      transition: all 0.2s linear;
-      color: #e0e0e0;
-      border-bottom: 2px solid #222;
-    }
-  
-    #check:checked ~ .barra {
-      transform: translateY(300px);
-    }
+  }
+
+  .ct:hover,
+  .ld:hover {
+    background: #c4c4c4;
+    color: #333333;
+  }
+
+  .ld {
+    width: 100%;
+    color: #ffff;
+    font-size: 16px;
+    padding: 10px;
+    margin-right: 15px;
+    text-align: end;
+    background-color: #333333;
+    border: 0;
+    cursor: text;
+  }
+
+  .corpo {
+    font-size: 18px;
+    margin: 15px;
+    margin-bottom: 40px;
+    border: 1px solid #979797;
+    border-radius: 7px;
+    padding: 20px;
+    height: 189px;
+  }
+
+  .nt {
+    display: inherit;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  #corpo {
+    font-size: 14px; 
+    display: flex; 
+    width: 100%; 
+    justify-content: center;
+  }
+
+  .botoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  select {
+    font-size: 14px;
+    display: flex;
+    height: 32px;
+    width: 150px;
+    margin-top: 10px;
+    margin-right: 15px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    color: #979797;
+    justify-content: space-around;
+    padding: 0px;
+  }
+
+  .mercadoria {
+    font-size: 14px;
+  }
+
+  #mercadoria {
+    display: flex;
+    height: 32px;
+    width: 348px;
+    margin: 9px 15px 0px 0px;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    padding: 0px;
+  }
+
+  .valor {
+    width: 22%;
+    font-size: 14px;
+  }
+
+  #valor {
+    width: 150px;
+    height: 32px;
+    font-size: 14px;
+    margin-top: 9px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    color: #979797;
+    padding: 0px 0px 0px 5px;
+  }
+
+  .atransacao {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .badicionar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .adicionar-transacao {
+    background-color: #333333;
+    color: white;
+    width: 25%;
+    right: 30px;
+    height: 32px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  #extrato {
+    max-width: 93%;
+    border-top: 1px solid #979797;
+    margin: 0 auto;
+    border: 0;
+    text-align: center;
+  }
+
+  .ext-transacoes {
+    color: #adac8adb;
+    font-size: 20px;
+  }
+
+  body {
+    margin: 0px;
+    border-bottom: 10px solid #333333;
+    font-family: lato;
+    height: 1024px;
+  }
+
+  .menu {
+    width: 94%;
+    background-color: #e0e0e0;
+    align-items: center;
+    display: flex;
+    padding: 10px 22px 10px 22px;
+    justify-content: space-between;
   }
   
-  @media only screen and (min-width: 1100px) {
-    * {
-      margin: 0;
-      padding: 0;
-    }
-  
-    #menu {
-      display: none;
-    }
-  
-    .app {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-    }
-  
-    .app-btn {
-      display: none;
-    }
-  
-    .app-menu {
-      display: flex;
-      position: unset;
-      width: 335px;
-      height: auto;
-      right: 0px;
-      border: 0px;
-      padding: 4px;
-      margin-right: 30px;
-      background-color: #ffff;
-      flex-direction: row;
-      flex-wrap: nowrap;
-    }
-  
-    .fechar {
-      display: none;
-    }
-  
-    .ct {
-      width: 200px;
-      font-size: 16px;
-      background-color: #ffff;
-      color: #333333;
-      font-family: 'Lato';
-      text-align: center;
-      padding: 0;
-      margin: 0;
-      border: 0;
-    }
-  
-    .ld {
-      width: 40%;
-      font-size: 16px;
-      background-color: #ffff;
-      color: #333333;
-      font-family: 'Lato';
-      padding: 0;
-      margin-right: 0;
-      text-align: center;
-      border-left: 1px solid #979797;
-    }
-  
-    .body {
-      display: flex;
-    }
-  
-    .corpo {
-      width: 105%;
-      font-size: 16px;
-      margin: 26px 20px 0px 20px;
-      border: 1px solid #979797;
-      border-radius: 4px;
-      padding: 20px;
-    }
-  
-    .nt {
-      display: block;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-  
-    #corpo {
-      font-size: 16px;
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      align-content: space-around;
-    }
+  #header {
+    font-size: 20px;
+  }
 
-    .botoes {
-      display: flex;
-      margin-right: 12px;
-      flex-direction: column;
-      align-content: space-around;
-    }
-  
-    select {
-      font-size: 16px;
-      height: 37px;
-      width: 100%;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-      border: 1px solid #979797;
-      color: #979797;
-    }
-  
-    .mercadoria {
-      font-size: 16px;
-    }
-  
-    #mercadoria {
-      height: 32px;
-      width: 100%;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-      border: 1px solid #979797;
-      color: #979797;
-    }
-  
-    .valor {
-      width: 98%;
-      font-size: 16px;
-    }
-  
-    #valor {
-      width: 101%;
-      height: 32px;
-      font-size: 14px;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-      border: 1px solid #979797;
-      color: #979797;
-    }
-  
-    .atransacao {
-      display: flex;
-      justify-content: flex-end;
-    }
-  
-    .adicionar-transacao {
-      background-color: #333333;
-      text-align: center;
-      color: white;
-      width: 102%;
-      height: 37px;
-      font-size: 16px;
-      border: 0;
-      border-radius: 4px;
-    }
-  
-    #extrato {
-      font-size: 16px;
-      border: 0;
-      width: 50%;
-      margin-top: 60px;
-      text-align: center;
-    }
-  
-    .ext-transacoes {
-      color: #adac8adb;
-      font-size: 20px;
-    }
-  
-    body {
-      margin: 0px;
-      border-bottom: 10px solid #333333;
-      font-family: lato;
-      height: 834px;
-    }
-  
-    .menu {
-      width: 100%;
-      background-color: #e0e0e0;
-      align-items: center;
-      display: flex;
-      padding: 15px;
-    }
-  
-    #header {
-      width: 411px;
-      font-size: 20px;
-      padding: 0px 0px 0px 20px;
-    }
-  
-    .material-icons {
-      font-size: 70px;
-    }
-  
-    #check {
-      display: none;
-    }
-  
-    #icone {
-      cursor: pointer;
-      padding-left: 125px;
-      padding-right: 33px;
-      z-index: 1;
-    }
-  
-    nav {
-      width: 100%;
-      top: 60px;
-    }
-  
-    nav a {
-      text-decoration: none;
-    }
+  .material-icons {
+    font-size: 70px;
+  }
 
-    .etrasações {
-      width: 100%;
-      display:flex;
-      flex-direction: colum;
-      
-    }
+  #check {
+    display: none;
+  }
 
-    #extrato {
-      font-size: 16px;
-      border: 0;
-      width: 180%;
-      margin-top: 60px;
-      text-align: center;
-    }
+  #icone {
+    cursor: pointer;
+    padding-left: 125px;
+    padding-right: 33px;
+    z-index: 1;
+  }
 
-    .tabela {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
+  .barra {
+    transition: all 0.2s linear;
+    font-size: 45px;
+    width: 50%;
+    height: 300px;
+    background-color: #333333;
+    left: -300px;
+  }
 
-    .titulo {
-      border-bottom: 1px solid #979797;
-      width: 100%;
-    }
+  nav {
+    width: 100%;
+    top: 60px;
+  }
 
-    .linha1 {
-      display: flex;
-    }
+  nav a {
+    text-decoration: none;
+  }
 
-    #titulo1{
-      width: 30%;
-    }
+  .link {
+    background-color: gray;
+    font-family: lato;
+    transition: all 0.2s linear;
+    color: #e0e0e0;
+    border-bottom: 2px solid #222;
+  }
 
-    #titulo2 {
-      width: 28%;
-      padding-left: 150px;
-    }
-    tbody {
-      border-bottom: 1px solid #979797;
-    }
+  #check:checked ~ .barra {
+    transform: translateY(300px);
+  }
 
-    .tr1 {
-      display: flex;
-      align-items: center;
-      width: 127%;
-    }
-
-    .texto1 {
-      padding: 0px 12px 0px 8px;
-      width: 53%;
-      text-align: initial;
-    }
-
-    .texto2 {
-      padding: 0px 121px 0px 8px;
-    }
-    
-    .tbody3 {
-      border-bottom: 1px solid #979797;
-      margin-bottom: 2px;
-    }
-
-    .texto3 {
-      padding: 0px 204px 0px 8px;
-    }
-
-    .total {
-      border-top: 1px solid #979797;
-    }
-
-    #total {
-      padding: 0px 215px 0px 15px;
-    }
+  .tabelaT {
+    width: 100%;
+    text-align: initial;
   }
   
+  #titulo1 {
+    width: 85%;
+  }
+
+  #titulo2{
+    width: 10%;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .app {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .app-btn {
+    display: none;
+  }
+
+  .app-menu {
+    display: flex;
+    position: unset;
+    width: 335px;
+    height: auto;
+    right: 0px;
+    border: 0px;
+    padding: 4px;
+    margin-right: 30px;
+    background-color: #ffff;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .fechar {
+    display: none;
+  }
+
+  .ct {
+    width: 200px;
+    font-size: 16px;
+    background-color: #ffff;
+    color: #333333;
+    font-family: 'Lato';
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  .ld {
+    width: 40%;
+    font-size: 16px;
+    background-color: #ffff;
+    color: #333333;
+    font-family: 'Lato';
+    padding: 0;
+    margin-right: 0;
+    text-align: center;
+    border-left: 1px solid #979797;
+  }
+
+  .controleFinanceiro{
+    display: flex;
+  }
+  
+  .corpo {
+    display: flex;
+    width: 90%;
+    font-size: 14px;
+    margin: 26px 20px 0px 20px;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    padding: 20px;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .nt {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  #corpo {
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-content: space-around;
+  }
+  .botoes {
+    display: flex;
+    margin-right: 12px;
+    flex-direction: column;
+    align-content: space-around;
+  }
+
+  select {
+    font-size: 16px;
+    height: 37px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    color: #979797;
+  }
+
+  .mercadoria {
+    font-size: 16px;
+  }
+
+  #mercadoria {
+    height: 32px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    color: #979797;
+  }
+
+  .valor {
+    width: 98%;
+    font-size: 16px;
+  }
+
+  #valor {
+    width: 98%;
+    height: 32px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    color: #979797;
+  }
+
+  .atransacao {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .adicionar-transacao {
+    background-color: #333333;
+    text-align: center;
+    color: white;
+    width: 102%;
+    height: 37px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  #extrato {
+    font-size: 16px;
+    border: 0;
+    width: 50%;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .ext-transacoes {
+    color: #adac8adb;
+    font-size: 20px;
+  }
+
+  body {
+    margin: 0px;
+    border-bottom: 10px solid #333333;
+    font-family: lato;
+    height: 834px;
+  }
+
+  .menu {
+    width: 100%;
+    background-color: #e0e0e0;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+  }
+
+  #header {
+    width: 411px;
+    font-size: 20px;
+    padding: 0px 0px 0px 20px;
+  }
+
+  .material-icons {
+    font-size: 70px;
+  }
+
+  #check {
+    display: none;
+  }
+
+  #icone {
+    cursor: pointer;
+    padding-left: 125px;
+    padding-right: 33px;
+    z-index: 1;
+  }
+
+  nav {
+    width: 100%;
+    top: 60px;
+  }
+
+  nav a {
+    text-decoration: none;
+  }
+
+  .etrasações {
+    width: 100%;
+    display:flex;
+    flex-direction: colum;
+    
+  }
+
+  #extrato {
+    font-size: 16px;
+    border: 0;
+    width: 180%;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .tabela {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
