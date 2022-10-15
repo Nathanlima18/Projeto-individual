@@ -37,9 +37,10 @@
                     <div id="corpo">
                         <div class="tipo-de-transacao" id="tipo-de-transacao">
                             <label for="t-transacao">Tipo de transação</label>
-                            <Select class="botão-compraevenda" name="compraevenda" id="compraEvenda" form="compraevenda">
-                                <option value="Compra"> Compra </option>
-                                <option value="Venda"> Venda </option>
+                            <Select class="botão-compraevenda" name="compraevenda" id="compraEvenda">
+                                <option Value="selecione">Selecione</option> 
+                                <option value="compra"> Compra </option>
+                                <option value="venda"> Venda </option>
                             </Select>
                         </div>
                     
@@ -64,18 +65,48 @@
             <section class="extrato" id="extrato">
                 <h3>Extrato de transações</h3>
             
-                <table class="tabelaT">
+                <table class="tabelaT" style="width:100%">
                     <thead class="titulo">
-                        <tr id="linha1">
-                            <td></td>
-                            <td id="titulo1">
+                        <tr id="linha1" class="linhas">
+                            <th></th>
+                            <th id="titulo1">
                                 <strong>Mercadoria</strong>
-                            </td>
-                            <td id="titulo2">
-                                <strong>Valor</strong>
-                            </td>
+                            </th>
+                            <th></th>
+                            <th id="titulo2">
+                                <strong> Valor </strong>
+                            </th>
+                            <th></th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr class="linhas total linhaM">
+                            <td>+</td>
+                            <td class="mercadoriaTabela">Lorem ipsum dolor sit amet consectetur</td>
+                            <td>R$ 12.999,99</td>
+                        </tr>
+                        <tr class="linhas total linhaM">
+                            <td>-</td>
+                            <td class="mercadoriaTabela">Quis nostrud exercitation</td>
+                            <td>R$ 99,99</td>
+                        </tr>
+                        <tr class="linhas total linhaM">
+                            <td>+</td>
+                            <td class="mercadoriaTabela">Lorem ipsum</td>
+                            <td>R$ 9,99</td>
+                        </tr>
+                        <tfoot class="linhas total linhaT">
+                            <tr></tr>
+                            <tr>
+                                <td class="textoTotal"><b>TOTAL</b></td>
+                            </tr>
+                            <tr></tr>
+                            <tr class="valorTotal">
+                                <td><b>R$ 9,99</b></td>
+                                <td style="font-size:10px">[LUCRO]</td>
+                            </tr>
+                        </tfoot>
+                    </tbody>
                 </table>
             <div class="nenhumaTransação"></div>
             </section>

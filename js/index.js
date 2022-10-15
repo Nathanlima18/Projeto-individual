@@ -25,6 +25,23 @@ function campoValor(event){
 function testaFormulario(e) {
     e.preventDefault();
 
+    var nomeMercadoria = document.getElementById("mercadoria").value;
+    var valorMercadoria = document.getElementById("valor").value;
+    var tipoTransacao = document.getElementById("compraEvenda").value;
+  
+    if (nomeMercadoria == "") {
+      alert("Preencha o nome da mercadoria!");
+      return false;
+    }
+    if (valorMercadoria == "") {
+      alert("Preencha o valor da mercadoria!");
+      return false;
+    }
+  
+    if (tipoTransacao == "selecione") {
+      alert("Preencha o tipo de transação!");
+      return false;
+    }
 
     var tabelaPura = localStorage.getItem('tabelaDetransação')
     if (tabelaPura != null) {
@@ -33,13 +50,18 @@ function testaFormulario(e) {
         var tabelaDetransação = [];
     }
 
-    //tabelaDetransação.push({
-    //    simbolo: ,
-    //    texto: e.target.elements['mercadoria'].value,
-    //    valor:
-    //})
+    tabelaDetransação.push({
+        simbolo: e.target.elements['compraEvenda'].value,
+        mercadoria: e.target.elements['mercadoria'].value,
+        valor: e.target.elements['valor'].value
+        .replaceAll(".", "")
+        .replaceAll(",", "."),
+    });
 
-    //console.log(e.target.elements['Venda'])
+    var tabelaS = JSON.stringify(tabelaDetransação);
+
+    localStorage.setItem("tabela", tabelaDetransação);
+
 }
 
 var tabelaPura = localStorage.getItem('tabelaDetransação')
@@ -79,3 +101,25 @@ function limparDados(e) {
     criarTabela();
     localStorage.removeItem('tabelaDetransação')
 }
+
+//[
+//    {
+//      "simbolo": true,
+//      "texto": "Lorem ipsum dolor sit amet consectetur",
+//      "valor": "R$ 12.999,99"
+//    },
+//    {
+//      "simbolo": false,
+//      "texto": "Quis nostrud exercitation",
+//      "valor": "R$ 99,99"
+//    },
+//    {
+//      "simbolo": true,
+//      "texto": "Lorem ipsum",
+//      "valor": "R$ 9,99"
+//    },
+//    {
+//      "texto": "Total",
+//      "valor": "R$ 12.909,99"
+//    }
+//  ]
