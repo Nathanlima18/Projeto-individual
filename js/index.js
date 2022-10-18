@@ -49,13 +49,13 @@ function testaFormulario(e) {
     //} else {
     //    var tabelaDetransação = [];
     //}
-    //localStorage.getItem(tabelaDetransação)
+    localStorage.getItem(tabelaDetransação)
     tabelaDetransação.push({
        simbolo: e.target.elements['compraEvenda'].value,
        mercadoria: e.target.elements['mercadoria'].value,
        valor: e.target.elements['valor'].value
-       //.replaceAll(".", "")
-       //.replaceAll(",", "."),
+       .replaceAll(".", "")
+       .replaceAll(",", "."),
     });
 
     var extrato = JSON.stringify(tabelaDetransação);
