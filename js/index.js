@@ -38,30 +38,30 @@ function testaFormulario(e) {
       return false;
     }
   
-    if (tipoTransacao == "selecione") {
-      alert("Preencha o tipo de transação!");
-      return false;
-    }
+   if (tipoTransacao == "selecione") {
+     alert("Preencha o tipo de transação!");
+     return false;
+   }
 
-    var tabelaPura = localStorage.getItem('tabelaDetransação')
-    if (tabelaPura != null) {
-        var tabelaDetransação = JSON.parse(tabelaPura)
-    } else {
-        var tabelaDetransação = [];
-    }
-
+    //var tabelaPura = localStorage.getItem(tabelaDetransação)
+    //if (tabelaPura != null) {
+    //    var tabelaDetransação = JSON.parse(tabelaPura)
+    //} else {
+    //    var tabelaDetransação = [];
+    //}
+    //localStorage.getItem(tabelaDetransação)
     tabelaDetransação.push({
-        simbolo: e.target.elements['compraEvenda'].value,
-        mercadoria: e.target.elements['mercadoria'].value,
-        valor: e.target.elements['valor'].value
-        .replaceAll(".", "")
-        .replaceAll(",", "."),
+       simbolo: e.target.elements['compraEvenda'].value,
+       mercadoria: e.target.elements['mercadoria'].value,
+       valor: e.target.elements['valor'].value
+       //.replaceAll(".", "")
+       //.replaceAll(",", "."),
     });
 
-    var tabelaS = JSON.stringify(tabelaDetransação);
+    var extrato = JSON.stringify(tabelaDetransação);
 
-    localStorage.setItem("tabela", tabelaDetransação);
-
+    localStorage.setItem("tabela", extrato);
+    
 }
 
 var tabelaPura = localStorage.getItem('tabelaDetransação')
@@ -75,19 +75,18 @@ var tabelaPura = localStorage.getItem('tabelaDetransação')
 function criarTabela() {
     for (transacao in tabelaDetransação) {
         document.querySelector('table.tabelaT').innerHTML +=
-       `<table class="tabela">
-            <tbody>
-                <tr class="tr1">
-                    <td>${tabelaDetransação[transacao].simbolo ? '+' : '-'}</td>
-                    <td class="texto1">${tabelaDetransação[transacao].texto}</td>
-                    <td>${tabelaDetransação[transacao].valor}</td>
-                </tr>
-            </tbody>
-        </table>`
-        //<p class="lucro">${tabelaDetransação[transacao].lucro ? '[LUCRO]' : '[PREJUIZO]'}</p>
+       `<tbody>
+       <tr class="linhas total linhaM">
+            <td>${e.target.elements['compraEvenda'].value}</td>
+            <td class="mercadoriaTabela">${e.target.elements['mercadoria'].value}</td>
+            <td class="valor">${e.target.elements['valor'].value}</td>
+        </tr>
+        </tbody>`
     }
+    //Console.log(e.target.elements)
 }
 
+//criarTabela()
 
 function limparDados(e) {
     tabelaDetransação.splice(e)
@@ -98,8 +97,7 @@ function limparDados(e) {
     } else  {
         L="Ação cancelada"
     }
-    criarTabela();
-    localStorage.removeItem('tabelaDetransação')
+    localStorage.removeItem('criarTabela')
 }
 
 //[

@@ -239,6 +239,11 @@ h3 {
 .mercadoriaTabela {
   text-align: initial;
 }
+
+.valor {
+  text-align: end;
+}
+
 .linhas {
   padding: 7px 0px 8px 0px;
 
@@ -252,9 +257,9 @@ h3 {
 
 .linhaM {
   display: grid;
-  grid-template-columns: 10% 27% 43% 18% 2%;
+  grid-template-columns: 10% 52% 35% 7% 2%;
   border-bottom: 1px solid #979797;
-  width: 150%
+  width: 100%
 }
 
 .linhaT {
@@ -266,6 +271,10 @@ h3 {
   display: grid;
 }
 
+.Ntransação {
+  text-align: center;
+}
+
 footer {
   width: 100%;
   position: fixed;
@@ -273,6 +282,7 @@ footer {
   border: 4px solid #333333;
   bottom: 0;
 }
+
 
 @media only screen and (min-width: 768px) {
   * {

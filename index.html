@@ -24,7 +24,7 @@
                     <label for="menu">
                     <img src="assets/img/sidebar.svg" class="fechar" />
                     </label>
-                    <button class="ct">Cadastro de transações</button>
+                    <button class="ct" href="../index.html">Cadastro de transações</button>
                     <input type="submit" class="ld" onclick="limparDados()" value ="Limpar Dados">              
                 </ul>
             </div>
@@ -78,35 +78,14 @@
                             </th>
                             <th></th>
                         </tr>
+                        
                     </thead>
-                    <tbody>
-                        <tr class="linhas total linhaM">
-                            <td>+</td>
-                            <td class="mercadoriaTabela">Lorem ipsum dolor sit amet consectetur</td>
-                            <td>R$ 12.999,99</td>
-                        </tr>
-                        <tr class="linhas total linhaM">
-                            <td>-</td>
-                            <td class="mercadoriaTabela">Quis nostrud exercitation</td>
-                            <td>R$ 99,99</td>
-                        </tr>
-                        <tr class="linhas total linhaM">
-                            <td>+</td>
-                            <td class="mercadoriaTabela">Lorem ipsum</td>
-                            <td>R$ 9,99</td>
-                        </tr>
-                        <tfoot class="linhas total linhaT">
-                            <tr></tr>
-                            <tr>
-                                <td class="textoTotal"><b>TOTAL</b></td>
-                            </tr>
-                            <tr></tr>
-                            <tr class="valorTotal">
-                                <td><b>R$ 9,99</b></td>
-                                <td style="font-size:10px">[LUCRO]</td>
-                            </tr>
-                        </tfoot>
-                    </tbody>
+                    <tr>
+                        <td class="Ntransação" id="transacoes" >Nenhuma transação cadastrada</td>
+                    </tr>
+                    <tfoot class="linhas total linhaT" id="total">
+                        
+                    </tfoot>
                 </table>
             <div class="nenhumaTransação"></div>
             </section>
