@@ -51,7 +51,7 @@
 
                         <div class="v">
                             <label for="valor" class="texto-v">Valor</label>
-                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="campoValor(event)">
+                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="formatarMoeda(f)">
                         </div>
 
                     </div>
@@ -80,14 +80,22 @@
                         </tr>
                         
                     </thead>
-                    <tr>
-                        <td class="Ntransação" id="transacoes" >Nenhuma transação cadastrada</td>
-                    </tr>
-                    <tfoot class="linhas total linhaT" id="total">
-                        
+
+                    <tbody></tbody>
+
+                    <tfoot>
+                        <tr></tr>
+                        <tr class="linhas total linhaT">
+                            <td class="textoTotal"><b>Total</b></td>
+                        </tr>
+                        <tr></tr>
+                        <tr class="linhas total linhaT" id="valorTotal">
+                            <td><b></b></td>
+                            <td style="font-size:10px">[LUCRO]</td>
+                        </tr>
                     </tfoot>
                 </table>
-            <div class="nenhumaTransação"></div>
+            <div id="nenhumaTransação"></div>
             </section>
         </div>
         <script src="./js/index.js"></script>

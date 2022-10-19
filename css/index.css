@@ -231,7 +231,7 @@ h3 {
 
 #linha1 {
   display: grid;
-  grid-template-columns: 10% 27% 43% 18% 2%;
+  grid-template-columns: 11% 22% 40% 19% 4%;
   width: 100%;
   border-bottom: 1px solid #979797;
 }
@@ -257,7 +257,7 @@ h3 {
 
 .linhaM {
   display: grid;
-  grid-template-columns: 10% 52% 35% 7% 2%;
+  grid-template-columns: 10% 52% 34% 7% 2%  ;
   border-bottom: 1px solid #979797;
   width: 100%
 }
@@ -267,7 +267,7 @@ h3 {
   border-top: 1px solid #979797;
 }
 
-.valorTotal {
+#valorTotal {
   display: grid;
 }
 
