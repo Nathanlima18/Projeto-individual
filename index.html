@@ -24,7 +24,7 @@
                     <label for="menu">
                     <img src="assets/img/sidebar.svg" class="fechar" />
                     </label>
-                    <button class="ct" href="../index.html">Cadastro de transações</button>
+                    <button class="ct" >Cadastro de transações</button>
                     <input type="submit" class="ld" onclick="limparDados()" value ="Limpar Dados">              
                 </ul>
             </div>
@@ -51,7 +51,7 @@
 
                         <div class="v">
                             <label for="valor" class="texto-v">Valor</label>
-                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="formatarMoeda(f)">
+                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="mascaraMoeda(this, event)">
                         </div>
 
                     </div>
@@ -85,14 +85,14 @@
 
                     <tfoot>
                         <tr></tr>
-                        <tr class="linhas total linhaT">
-                            <td class="textoTotal"><b>Total</b></td>
+                        <!--<tr class="linhas total linhaT">
+                            <td class="Total"><b>Total</b></td>
                         </tr>
                         <tr></tr>
                         <tr class="linhas total linhaT" id="valorTotal">
                             <td><b></b></td>
                             <td style="font-size:10px">[LUCRO]</td>
-                        </tr>
+                        </tr> -->
                     </tfoot>
                 </table>
             <div id="nenhumaTransação"></div>
