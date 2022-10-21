@@ -1,5 +1,12 @@
 var listaExtrato = [];
 
+function cadastroTransacoes() {
+    var c = document.querySelector("#CT");
+    c.addEventListener("click", function() {
+        location.reload();
+    });
+};
+
 function limparDados(e) {
     tabelaDetransação.splice(e)
     var r=confirm("Quer mesmo limpar todos os dados?");
@@ -17,6 +24,7 @@ function limparDados(e) {
         location.reload();
     });
 }
+
 
 const valorTabela = /[^0-9]/;
 
@@ -49,21 +57,7 @@ String.prototype.reverse = function(){
     }
 }
 
-var formato  =  new Intl.NumberFormat ( "pt-BR" ,  {
-    estilo : "moeda" ,
-    moeda : "BRL" ,
-    maximumFractionDigits : 2 ,
-});
 
-formato.format(2500);
-
-function formatoMoeda (valor)  {
-    const valorFormato = valor.toLocaleString ("pt-BR",{
-      estilo: "moeda",
-      moeda: "BRL",
-    });
-    return valorFormato;
-};
 
 function testaFormulario(e) {
     e.preventDefault();
@@ -129,11 +123,26 @@ function criarTabela() {
         document.getElementById("nenhumaTransação").style.display = "none";
     }
 
+    var formato  =  new Intl.NumberFormat ( "pt-BR" ,  {
+        estilo : "moeda" ,
+        moeda : "BRL" ,
+        maximumFractionDigits : 2 ,
+    });
     
+    formato.format(2500);
+    
+    function formatoMoeda (valores)  {
+        const valorFormato = valores.toLocaleString ("pt-BR",{
+          estilo: "moeda",
+          moeda: "BRL",
+        });
+        return valorFormato;
+    };
+
     var mascaraValor;
     var total = 0;
     for (produto in listaExtrato) {
-        if (listaExtrato[produto].tipoTransacao == "compra") {
+        if (listaExtrato[produto].transacao == "compra") {
             mascaraValor = listaExtrato[produto];
             total -= number(transacao.valor);
         } else {
@@ -150,22 +159,20 @@ function criarTabela() {
             <td class="valor">${formatoMoeda(Number(transacao.valor))}</td>
         </tr>`
     }
-}
 
 
-var total = '';
-if (tabelaDetransação.length > 0) {
-    document.querySelector("table tfoot").innerHTML += 
-    `
-    <tr></tr>
-    <tr class="linhas total linhaT">
-    <td class="Total"><b>Total</b></td>
-    <tr></tr>
-    <tr class="linhas total linhaT" id="valorTotal">
-        <td><b> ${formato.format(total)} </b></td>
-        <td style="font-size:10px">${Math.sign(total) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}</td>
-    </tr>`;
-}
+    if (tabelaDetransação.length > 0) {
+        document.querySelector("table").innerHTML += `
+        <tfoot>
+            <tr></tr>
+            <tr class="linhas total linhaT">
+                <td class="Total"><b>Total</b></td>
+            </tr>
+            <tr class="linhas total linhaT" id="valorTotal">
+                <td><b> ${formato.format(valor)} </b></td>
+                <td style="font-size:10px">${Math.sign(valor) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}</td>
+            </tr>
+        </tfoot>`;
+    }
+}   
 criarTabela()
-
-

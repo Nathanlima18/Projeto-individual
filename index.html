@@ -24,7 +24,7 @@
                     <label for="menu">
                     <img src="assets/img/sidebar.svg" class="fechar" />
                     </label>
-                    <button class="ct" >Cadastro de transações</button>
+                    <button class="ct" id="CT"onclick="cadastroTransacoes()">Cadastro de transações</button>
                     <input type="submit" class="ld" id= "LD" onclick="limparDados()" value ="Limpar Dados">              
                 </ul>
             </div>
@@ -81,19 +81,8 @@
                         
                     </thead>
 
-                    <tbody></tbody>
-
-                    <tfoot>
-                        <tr></tr>
-                        <!--<tr class="linhas total linhaT">
-                            <td class="Total"><b>Total</b></td>
-                        </tr>
-                        <tr></tr>
-                        <tr class="linhas total linhaT" id="valorTotal">
-                            <td><b></b></td>
-                            <td style="font-size:10px">[LUCRO]</td>
-                        </tr> -->
-                    </tfoot>
+                    <tbody>
+                    </tbody>
                 </table>
             <div id="nenhumaTransação"></div>
             </section>
