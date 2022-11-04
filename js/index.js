@@ -79,7 +79,7 @@ function criarTabela() {
     }
     
     if (tabelaDetransacao.length > 0) {
-        document.querySelector("table.tabelaT tfoot").innerHTML += `
+        document.querySelector("table.tabelaT tfoot").innerHTML = `
         <tr></tr>
         <tr class="linhaT">
             <td></td>
