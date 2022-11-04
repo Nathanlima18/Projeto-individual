@@ -1,178 +1,130 @@
-var listaExtrato = [];
+function limparDados() {
+    let confirmar = confirm("Deseja remover todas as transações?");
 
-function cadastroTransacoes() {
-    var c = document.querySelector("#CT");
-    c.addEventListener("click", function() {
-        location.reload();
-    });
-};
+    if (confirmar) {
+        document.querySelectorAll("table tbody , tfoot").forEach((element) => {
+            element.remove();
+        })
 
-function limparDados(e) {
-    tabelaDetransação.splice(e)
-    var r=confirm("Quer mesmo limpar todos os dados?");
-    if (r==true) {
-        localStorage.removeItem('tabela')
-        alert('Dados Apagados!')
-    } else {
-        alert('Ação Cancelada!')
+        localStorage.clear();
+        tabelaDetransacao = [];
+        criarTabela();  
     }
-
-    criarTabela()
-
-    var r = document.querySelector("#LD");
-    r.addEventListener("click", function() {
-        location.reload();
-    });
 }
-
 
 const valorTabela = /[^0-9]/;
 
-String.prototype.reverse = function(){
-    return this.split('').reverse().join(''); 
-  };
-  
-    function mascaraMoeda(campo,evento){
-      var tecla = (!evento) ? window.event.keyCode : evento.which;
-      var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
-      var resultado  = "";
-      var mascara = "##.###.###,##".reverse();
-      for (var x=0, y=0; x<mascara.length && y<valor.length;) {
-        if (mascara.charAt(x) != '#') {
-          resultado += mascara.charAt(x);
-          x++;
-        } else {
-          resultado += valor.charAt(y);
-          y++;
-          x++;
-        }
-      
-
-      campo.value = resultado.reverse();
-      if(valorTabela.test(evento.key)){
-      		evento.preventDefault();
-      		alert('Apenas números são permitidos!')
-            return false
-        }
-    }
-}
-
-
-
-function testaFormulario(e) {
-    e.preventDefault();
-
-    var nomeMercadoria = document.getElementById("mercadoria").value;
-    var valorMercadoria = document.getElementById("valor").value;
-    var tipoTransacao = document.getElementById("compraEvenda").value;
-  
-    if (nomeMercadoria == "") {
-      alert("Preencha o nome da mercadoria!");
-      return false;
-    }
-    if (valorMercadoria == "") {
-      alert("Preencha o valor da mercadoria!");
-      return false;
+function formatoDinheiro(e) {
+    if (valorTabela.test(e.key)) {
+      console.log(e.key);
+      e.preventDefault();
+      return;
     }
   
-   if (tipoTransacao == "selecione") {
-     alert("Preencha o tipo de transação!");
-     return false;
-   }
-
-    localStorage.getItem("tabela")
-    tabelaDetransação.push({
-       simbolo: e.target.elements['compraEvenda'].value,
-       mercadoria: e.target.elements['mercadoria'].value,
-       valor: e.target.elements['valor'].value
-       .replaceAll(".", "")
-       .replaceAll(",", "."),
-    });
-
-    var extrato = JSON.stringify(tabelaDetransação);
-
-    localStorage.setItem("tabela", extrato);
-    
-    var R = document.querySelector("#AT");
-    R.addEventListener("click", function() {
-        location.reload();
-    });
+    if (!e.target.value) return;
+  
+    valor = e.target.value.toString();
+    valor = valor.replace(/[\D]+/g, "");
+    valor = valor.replace(/([0-9]{1})$/g, ",$1");
+  
+    if (valor.length >= 6) {
+      while (/([0-9]{4})[,|\.]/g.test(valor)) {
+        valor = valor.replace(/([0-9]{1})$/g, ",$1");
+        valor = valor.replace(/([0-9]{3})[,|\.]/g, ".$1");
+      }
+    }
+    e.target.value = valor;
 }
 
 var tabelaPura = localStorage.getItem('tabela')
 if (tabelaPura != null) {
-    var tabelaDetransação = JSON.parse(tabelaPura)
+    var tabelaDetransacao = JSON.parse(tabelaPura)
 } else {
-    var tabelaDetransação = [];
+    var tabelaDetransacao = [];
 }
 
-
 function criarTabela() {
-        
-    document.querySelectorAll(".conteudo").forEach((element) => {
-    element.remove();
-    });
 
-    if (tabelaDetransação.length === 0) {
-        document.getElementById("nenhumaTransação").innerHTML +=
-        `<tr>
-            <td class="Ntransação" id="transacoes">Nenhuma transação cadastrada</td>
-        </tr>`;
+    document.querySelectorAll(".linhaM").forEach((element) => {
+        element.remove();
+    })
+
+    if (tabelaDetransacao.length === 0) {
+        document.getElementById("nenhumaTransacao").innerHTML +=
+        `<div id="nenhumaTransacao">Nenhuma transação cadastrada</div>`;
 
     } else {
-        document.getElementById("nenhumaTransação").style.display = "none";
+        document.getElementById("nenhumaTransacao").style.display = "none";
     }
-
-    var formato  =  new Intl.NumberFormat ( "pt-BR" ,  {
-        estilo : "moeda" ,
-        moeda : "BRL" ,
-        maximumFractionDigits : 2 ,
-    });
-    
-    formato.format(2500);
-    
-    function formatoMoeda (valores)  {
-        const valorFormato = valores.toLocaleString ("pt-BR",{
-          estilo: "moeda",
-          moeda: "BRL",
-        });
-        return valorFormato;
-    };
-
-    var mascaraValor;
-    var total = 0;
-    for (produto in listaExtrato) {
-        if (listaExtrato[produto].transacao == "compra") {
-            mascaraValor = listaExtrato[produto];
-            total -= number(transacao.valor);
-        } else {
-            
-            total += number(transacao.valor);
-        }
-    }
-
-    for (transacao of tabelaDetransação) {
+     var mascaraValor;
+     var total = 0;
+     for (transacao of tabelaDetransacao) {
         document.querySelector('table tbody').innerHTML +=
         `<tr class="linhas total linhaM">
             <td>${transacao.simbolo =='compra' ? '-':'+'}</td>
             <td class="mercadoriaTabela">${transacao.mercadoria}</td>
-            <td class="valor">${formatoMoeda(Number(transacao.valor))}</td>
+            <td class="valor">${transacao.valor.toLocaleString ("pt-BR",{style:'currency', currency: "BRL",})}</td>
         </tr>`
+
+        if (transacao.simbolo == "compra") {
+            mascaraValor = tabelaDetransacao[transacao];
+            total -= (transacao.valor);
+        } else {
+
+            total += (transacao.valor);
+        };
+
+     
+     
+    }
+    
+    if (tabelaDetransacao.length > 0) {
+        document.querySelector("table.tabelaT tfoot").innerHTML += `
+        <tr></tr>
+        <tr class="linhaT">
+            <td></td>
+            <td class="Total"><b>Total</b></td>
+            <td></td>
+            <td id="valorTotal"><b> ${total.toLocaleString ("pt-BR",{style:'currency', currency: "BRL",}) }</b></td>
+        </tr>
+        <tr>
+            <td class="prejuizo">${Math.sign(total) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}</td>
+        </tr>`;
+    }
+}
+
+function testaFormulario(e) {
+    e.preventDefault();
+  
+    if (document.getElementById("compraEvenda").value == "selecione") {
+        alert("Preencha o tipo de transação!");
+        return false;
+    }
+    
+    if (document.getElementById("mercadoria").value == "") {
+      alert("Preencha o nome da mercadoria!");
+      return false;
     }
 
-
-    if (tabelaDetransação.length > 0) {
-        document.querySelector("table").innerHTML += `
-        <tfoot>
-            <tr></tr>
-            <tr class="linhas total linhaT">
-                <td class="Total"><b>Total</b></td>
-            </tr>
-            <tr class="linhas total linhaT" id="valorTotal">
-                <td><b> ${formato.format(valor)} </b></td>
-                <td style="font-size:10px">${Math.sign(valor) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}</td>
-            </tr>
-        </tfoot>`;
+    if (document.getElementById("valor").value == "") {
+      alert("Preencha o valor da mercadoria!");
+      return false;
     }
-}   
+  
+    localStorage.getItem("tabela")
+    tabelaDetransacao.push({
+       simbolo: e.target.elements['compraEvenda'].value,
+       mercadoria: e.target.elements['mercadoria'].value,
+       valor: parseFloat(e.target.elements['valor'].value 
+       .replaceAll(".", "")
+       .replaceAll(",", "."))
+    });
+
+    var extrato = JSON.stringify(tabelaDetransacao);
+
+    localStorage.setItem("tabela", extrato);
+
+    criarTabela()
+}
+
 criarTabela()

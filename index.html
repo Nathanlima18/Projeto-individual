@@ -24,7 +24,7 @@
                     <label for="menu">
                     <img src="assets/img/sidebar.svg" class="fechar" />
                     </label>
-                    <button class="ct" id="CT"onclick="cadastroTransacoes()">Cadastro de transações</button>
+                    <button class="ct">Cadastro de transações</button>
                     <input type="submit" class="ld" id= "LD" onclick="limparDados()" value ="Limpar Dados">              
                 </ul>
             </div>
@@ -51,12 +51,12 @@
 
                         <div class="v">
                             <label for="valor" class="texto-v">Valor</label>
-                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="mascaraMoeda(this, event)">
+                            <input type="text" placeholder="R$ 0,00" name="valor" id="valor" onkeypress="formatoDinheiro(event)">
                         </div>
 
                     </div>
                     <div class="badicionar">
-                        <input type="submit" value="Adicionar Transação" class="adicionar-transacao" id="AT"/>
+                        <input type="submit" value="Adicionar Transação" class="adicionar-transacao" />
                     </div>
                 </form>  
             </section>
@@ -83,8 +83,11 @@
 
                     <tbody>
                     </tbody>
+
+                    <tfoot>
+                    </tfoot>
                 </table>
-            <div id="nenhumaTransação"></div>
+            <div id="nenhumaTransacao"></div>
             </section>
         </div>
         <script src="./js/index.js"></script>

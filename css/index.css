@@ -246,6 +246,9 @@ h3 {
 
 .linhas {
   padding: 7px 0px 8px 0px;
+  display: grid;
+  grid-template-columns: 10% 27% 43% 18% 2%;
+  width: 100%;
 
 }
 
@@ -263,12 +266,23 @@ h3 {
 }
 
 .linhaT {
+  padding: 7px 0px 8px 0px;
   margin-top: 2px;
   border-top: 1px solid #979797;
+  display: grid;
+  grid-template-columns: 5% 18% 55% 21% 2%;
+  width: 100%;
 }
 
 #valorTotal {
   display: grid;
+  width: 200%;
+}
+
+.prejuizo {
+  font-size: 10px;
+  text-align: end;
+  padding-right: 10px;
 }
 
 .Ntransação {
@@ -465,7 +479,6 @@ footer {
 
   body {
     margin: 0px;
-    border-bottom: 10px solid #333333;
     font-family: lato;
     height: 1024px;
   }
@@ -534,11 +547,28 @@ footer {
   }
   
   #titulo1 {
-    width: 85%;
+    width: 60%;
   }
 
   #titulo2{
-    width: 10%;
+    width: 85%;
+    text-align: end;
+  }
+
+  .linhaM {
+    display: grid;
+    grid-template-columns: 3% 76% 9% 5% 2%;
+    border-bottom: 1px solid #979797;
+    width: 95%;
+    padding-left: 30px;
+  }
+
+  .linhaT {
+    grid-template-columns: 7% 15% 60% 9% 2%;
+  }
+
+  .prejuizo {
+    padding-right: 75px;
   }
 }
 
@@ -635,6 +665,7 @@ footer {
     flex-direction: column;
     align-content: space-around;
   }
+
   .botoes {
     display: flex;
     margin-right: 12px;
@@ -714,7 +745,6 @@ footer {
 
   body {
     margin: 0px;
-    border-bottom: 10px solid #333333;
     font-family: lato;
     height: 834px;
   }
